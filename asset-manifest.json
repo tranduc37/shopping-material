@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/%7Brepo-name%7D/static/css/main.ea1455b2.chunk.css",
+    "main.js": "/%7Brepo-name%7D/static/js/main.3f6ba81a.chunk.js",
+    "main.js.map": "/%7Brepo-name%7D/static/js/main.3f6ba81a.chunk.js.map",
+    "runtime-main.js": "/%7Brepo-name%7D/static/js/runtime-main.f93fe4da.js",
+    "runtime-main.js.map": "/%7Brepo-name%7D/static/js/runtime-main.f93fe4da.js.map",
+    "static/css/2.a44c59e0.chunk.css": "/%7Brepo-name%7D/static/css/2.a44c59e0.chunk.css",
+    "static/js/2.f73619b2.chunk.js": "/%7Brepo-name%7D/static/js/2.f73619b2.chunk.js",
+    "static/js/2.f73619b2.chunk.js.map": "/%7Brepo-name%7D/static/js/2.f73619b2.chunk.js.map",
+    "static/js/3.6b2a496a.chunk.js": "/%7Brepo-name%7D/static/js/3.6b2a496a.chunk.js",
+    "static/js/3.6b2a496a.chunk.js.map": "/%7Brepo-name%7D/static/js/3.6b2a496a.chunk.js.map",
+    "index.html": "/%7Brepo-name%7D/index.html",
+    "static/css/2.a44c59e0.chunk.css.map": "/%7Brepo-name%7D/static/css/2.a44c59e0.chunk.css.map",
+    "static/css/main.ea1455b2.chunk.css.map": "/%7Brepo-name%7D/static/css/main.ea1455b2.chunk.css.map",
+    "static/js/2.f73619b2.chunk.js.LICENSE.txt": "/%7Brepo-name%7D/static/js/2.f73619b2.chunk.js.LICENSE.txt",
+    "static/media/banner_3.7d2c45f4.jpeg": "/%7Brepo-name%7D/static/media/banner_3.7d2c45f4.jpeg",
+    "static/media/logomango.c785ad66.png": "/%7Brepo-name%7D/static/media/logomango.c785ad66.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f93fe4da.js",
+    "static/css/2.a44c59e0.chunk.css",
+    "static/js/2.f73619b2.chunk.js",
+    "static/css/main.ea1455b2.chunk.css",
+    "static/js/main.3f6ba81a.chunk.js"
+  ]
+}
