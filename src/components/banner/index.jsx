@@ -1,7 +1,7 @@
 import React from 'react';
-import image_1 from '../../assets/banner_3.jpeg';
-import image_2 from '../../assets/banner_3.jpeg';
-import image_3 from '../../assets/banner_3.jpeg';
+import image_1 from '../../assets/banner_1.jpeg';
+import image_2 from '../../assets/banner_2.jpeg';
+import image_3 from '../../assets/banner_4.jpeg';
 import { makeStyles } from '@material-ui/core/styles';
 import OwlCarousel from 'react-owl-carousel';
 
@@ -18,7 +18,9 @@ const useStyle = makeStyles(()=>({
   },
   img: {
     position: 'relative',
-    
+    maxWidth: '100%',
+    maxHeight: '30rem',
+    objectFit: 'cover',
   }
 }))
 export default () => {
@@ -31,7 +33,7 @@ export default () => {
         items="1"
         dots
         nav
-        auto={true}
+        autoplay= {true}
         loop
         margin={10}
         center
@@ -41,10 +43,10 @@ export default () => {
           <img src={image_1} className={classes.img} alt="banner_1"/>
         </div>
         <div className={classes.banner__iamge}>
-          <img src={image_2} alt="banner_1"/>
+          <img src={image_2} className={classes.img} alt="banner_1"/>
         </div>
         <div className={classes.banner__iamge}>
-          <img src={image_3} alt="banner_1"/>
+          <img src={image_3} className={classes.img} alt="banner_1"/>
         </div>
       </OwlCarousel>
     </div>

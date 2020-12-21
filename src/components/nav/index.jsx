@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -15,7 +15,10 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingBasketSharpIcon from '@material-ui/icons/ShoppingBasketSharp';
 import Fade from '@material-ui/core/Fade';
-import { Link } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
+import { Drawer, Link, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,8 +31,9 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  link: {
-    textDecoration: 'none',
+  linkhome: {
+    textDecoration: 'none !important',
+    color: 'white',
   },
   title: {
     display: 'none',
@@ -65,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
   inputRoot: {
     color: 'inherit',
   },
@@ -90,15 +95,26 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  Drawer: {
+    width: '250px',
+    height: '100%',
+    textAlign: "center",
+  },
 }));
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [open, setOpen] = useState(false);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handelDrawer = () => {
+    setOpen(true)
+    console.log('true')
+  }
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -135,7 +151,7 @@ export default function PrimarySearchAppBar() {
             <FavoriteIcon />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>Favorite</p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
@@ -156,12 +172,11 @@ export default function PrimarySearchAppBar() {
               edge="start"
               className={classes.menuButton}
               color="inherit"
-              aria-label="open drawer"
             >
-              <MenuIcon />
+              <MenuIcon  onClick={handelDrawer} />
             </IconButton>
-            <Typography className={classes.title} variant="h6" noWrap textDecoration="none">
-              <Link>
+            <Typography className={classes.title} variant="h6" noWrap >
+              <Link className={classes.linkhome} color="primary">
                 REACTJS SHOP
               </Link>
             </Typography>
@@ -212,6 +227,24 @@ export default function PrimarySearchAppBar() {
             </div>
           </Toolbar>
         </AppBar>
+        <Drawer
+          anchor="left"
+          open={open}
+          onClose={()=> setOpen(false)}
+        >
+          <div className={classes.Drawer}>
+            <h4>Alexander Nguyen</h4>
+            <List>
+            {['Product', 'About', 'Services', 'My CV'].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+          <Divider />
+          </div>
+        </Drawer>
         {renderMobileMenu}
         
       </div>

@@ -86,7 +86,7 @@ function Products() {
               title="Shrimp and Chorizo Paella"
               subtitle="September 14, 2016"
               avatar={
-                <Avatar aria-aria-label="recipe" className={classes.avatar}>D</Avatar>
+                <Avatar aria-aria-label="recipe" className={classes.avatar}>H</Avatar>
               }
               action={
                 <IconButton>
