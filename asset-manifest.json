@@ -1,29 +1,31 @@
 {
   "files": {
     "main.css": "/shopping-material/static/css/main.ea1455b2.chunk.css",
-    "main.js": "/shopping-material/static/js/main.a13abe83.chunk.js",
-    "main.js.map": "/shopping-material/static/js/main.a13abe83.chunk.js.map",
-    "runtime-main.js": "/shopping-material/static/js/runtime-main.cf28e9b6.js",
-    "runtime-main.js.map": "/shopping-material/static/js/runtime-main.cf28e9b6.js.map",
-    "static/css/2.a44c59e0.chunk.css": "/shopping-material/static/css/2.a44c59e0.chunk.css",
-    "static/js/2.95c30385.chunk.js": "/shopping-material/static/js/2.95c30385.chunk.js",
-    "static/js/2.95c30385.chunk.js.map": "/shopping-material/static/js/2.95c30385.chunk.js.map",
-    "static/js/3.aa601efc.chunk.js": "/shopping-material/static/js/3.aa601efc.chunk.js",
-    "static/js/3.aa601efc.chunk.js.map": "/shopping-material/static/js/3.aa601efc.chunk.js.map",
+    "main.js": "/shopping-material/static/js/main.92dfd75b.chunk.js",
+    "main.js.map": "/shopping-material/static/js/main.92dfd75b.chunk.js.map",
+    "runtime-main.js": "/shopping-material/static/js/runtime-main.4b743801.js",
+    "runtime-main.js.map": "/shopping-material/static/js/runtime-main.4b743801.js.map",
+    "static/css/2.1f280803.chunk.css": "/shopping-material/static/css/2.1f280803.chunk.css",
+    "static/js/2.9f034ecb.chunk.js": "/shopping-material/static/js/2.9f034ecb.chunk.js",
+    "static/js/2.9f034ecb.chunk.js.map": "/shopping-material/static/js/2.9f034ecb.chunk.js.map",
+    "static/js/3.afc6a414.chunk.js": "/shopping-material/static/js/3.afc6a414.chunk.js",
+    "static/js/3.afc6a414.chunk.js.map": "/shopping-material/static/js/3.afc6a414.chunk.js.map",
     "index.html": "/shopping-material/index.html",
-    "static/css/2.a44c59e0.chunk.css.map": "/shopping-material/static/css/2.a44c59e0.chunk.css.map",
+    "static/css/2.1f280803.chunk.css.map": "/shopping-material/static/css/2.1f280803.chunk.css.map",
     "static/css/main.ea1455b2.chunk.css.map": "/shopping-material/static/css/main.ea1455b2.chunk.css.map",
-    "static/js/2.95c30385.chunk.js.LICENSE.txt": "/shopping-material/static/js/2.95c30385.chunk.js.LICENSE.txt",
+    "static/js/2.9f034ecb.chunk.js.LICENSE.txt": "/shopping-material/static/js/2.9f034ecb.chunk.js.LICENSE.txt",
     "static/media/banner_1.6174bb6a.jpeg": "/shopping-material/static/media/banner_1.6174bb6a.jpeg",
     "static/media/banner_2.7d79dd96.jpeg": "/shopping-material/static/media/banner_2.7d79dd96.jpeg",
+    "static/media/banner_3.7d2c45f4.jpeg": "/shopping-material/static/media/banner_3.7d2c45f4.jpeg",
     "static/media/banner_4.85d487e7.jpeg": "/shopping-material/static/media/banner_4.85d487e7.jpeg",
+    "static/media/index.css": "/shopping-material/static/media/cormorant-latin-700italic.ac30d170.woff2",
     "static/media/logomango.c785ad66.png": "/shopping-material/static/media/logomango.c785ad66.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf28e9b6.js",
-    "static/css/2.a44c59e0.chunk.css",
-    "static/js/2.95c30385.chunk.js",
+    "static/js/runtime-main.4b743801.js",
+    "static/css/2.1f280803.chunk.css",
+    "static/js/2.9f034ecb.chunk.js",
     "static/css/main.ea1455b2.chunk.css",
-    "static/js/main.a13abe83.chunk.js"
+    "static/js/main.92dfd75b.chunk.js"
   ]
 }
