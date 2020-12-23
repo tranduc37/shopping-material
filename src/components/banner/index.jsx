@@ -4,10 +4,11 @@ import image_2 from '../../assets/banner_2.jpeg';
 import image_3 from '../../assets/banner_4.jpeg';
 import { makeStyles } from '@material-ui/core/styles';
 import OwlCarousel from 'react-owl-carousel';
+import { Button, Link } from '@material-ui/core';
 
 const useStyle = makeStyles(()=>({
   main: {
-    position: 'relative',
+    margin: '1px 0',
   },
   banner: {
     width: '100%',
@@ -17,10 +18,22 @@ const useStyle = makeStyles(()=>({
     marginTop: '1rem',
   },
   img: {
-    position: 'relative',
     maxWidth: '100%',
     maxHeight: '30rem',
     objectFit: 'cover',
+    position: 'relative',
+
+  },
+  linkClick: {
+    position: 'absolute',
+    height: '2rem',
+    width: '10rem',
+    top: 'calc(100%/2)',
+    left: 'calc(100%/2)',
+    zIndex: 999999,
+    borderRadius: '2px solid red',
+    listStyleType: 'none',
+    textDecoration: 'none !impotant',
   }
 }))
 export default () => {
@@ -49,6 +62,10 @@ export default () => {
           <img src={image_3} className={classes.img} alt="banner_1"/>
         </div>
       </OwlCarousel>
+
+      <Link href="/"  color="default" className={classes.linkClick} variant="raised">
+        LEARN MORE
+      </Link>
     </div>
   )
 }

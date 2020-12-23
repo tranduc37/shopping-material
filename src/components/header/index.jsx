@@ -5,6 +5,7 @@ import Nav from '../nav';
 import Products from '../products';
 import Banner from '../banner';
 import Cateroly from '../cateroly';
+import About from '../about';
 
 export default () => {
 
@@ -14,6 +15,7 @@ export default () => {
         <Banner />
         <Cateroly />
         <Products />
+        {/* <About /> */}
         {/* <Nav /> */}
     </React.Fragment>
   )
