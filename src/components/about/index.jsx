@@ -1,69 +1,79 @@
+import { Avatar, Button, Container, Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import { Avatar, CardContent, CardHeader, CardMedia, Chip, Container, Grid, makeStyles, Typography } from '@material-ui/core';
-import avatar_Thong from '../../assets/banner_3.jpeg';
-import FaceIcon from '@material-ui/icons/Face';
+import ClearIcon from '@material-ui/icons/Clear';
+import avatar from '../../assets/banner_3.jpeg';
 
-const useStyle = makeStyles(()=>({
-  alignItemsAndJustifyContent: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'pink',
+const useStyle = makeStyles(theme =>({
+  root: {
+    border: `1px solid ${theme.palette.grey[300]}`,
+    borderRadius: '3px',
+    backgroundColor: '#5f9ea0',
   },
-  header: {
-    height: 'auto',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'pink',
+  avatar: {
+    width: theme.spacing(5),
+    height: theme.spacing(5),
   },
 }))
 
-export default () => {
-  const classes = useStyle();
-  return (
-    <div>
-      <Container maxWidth="md">
-        <Grid container xs={12} spacing={10}>
-          <Grid item xs={6}>
-            <Card>
-              <div className={classes.header}>
-                <div>
-                <Avatar src={avatar_Thong} className={classes.avatar} size="small" />
+const Header = () => {
+  return(
+    <Grid container justify="flex-end">
+      <Grid xs={1}>
+        <ClearIcon />
+      </Grid>
+    </Grid>
+  )
+}
 
-                </div>
-              </div>
-              <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  This impressive paella is a perfect party dish and a fun meal to cook together with your
-                  guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <Chip 
-                avatar={
-                  <Avatar src={avatar_Thong}/>
-                }
-                size="medium"
-              />
-              <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  This impressive paella is a perfect party dish and a fun meal to cook together with your
-                  guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                </Typography>
-              </CardContent>
-              <div className={classes.alignItemsAndJustifyContent}>
-                4. useStyles 
-              </div>
-            </Card>
-          </Grid>
-        </Grid>
-      </Container>
+const Photo = () => {
+  return(
+    <Grid xs={12} >
+      <Avatar src={avatar}/>
+    </Grid>
+  )
+}
+const Name = () => {
+  return(
+    <div>
+      <Typography variant="h6">
+        Dinh Ngoc Thong
+      </Typography>
+      <Typography variant="caption" display="block" gutterBottom>
+        manager at net.company
+      </Typography>
+
     </div>
   )
 }
+const Follow = () => {
+  return(
+    <Button disableElevation color="primary" variant="contained" size="small">
+      Follow
+    </Button>
+  )
+}
+
+export default () => {
+  const classes = useStyle();
+
+  return (
+    <Container maxWidth="md" gutterBottom={true} spacing={10}>
+      <Grid container xs ={12} spacing={5}>
+        <Grid container xs={6} direction="column" alignItems="center" className={classes.root}>
+          <Header />
+          <Photo />
+          <Name />
+          <Follow />
+        </Grid>
+        <Grid container xs={6} direction="column" alignItems="center" className={classes.root}>
+          <Header />
+          <Photo />
+          <Name />
+          <Follow />
+        </Grid>
+      </Grid>
+    </Container>
+  )
+};
+
 

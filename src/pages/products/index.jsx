@@ -1,22 +1,19 @@
 import React, { useContext,useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { Container } from '@material-ui/core';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import { Breadcrumbs, Container } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -28,6 +25,9 @@ const useStyle = makeStyles(()=>({
   root: {
     display: 'flex',
    
+  },
+  cateroly: {
+    margin: '1rem',
   },
   mainCard: {
     margin: '10px',
@@ -51,6 +51,10 @@ const useStyle = makeStyles(()=>({
   },
 }))
 
+function handleClick(event) {
+  event.preventDefault();
+  console.info('You clicked a breadcrumb.');
+}
 
 function Products() {
   const classes = useStyle();
@@ -77,6 +81,18 @@ function Products() {
   
   
   return (
+    <div>
+      <div className={classes.cateroly}>
+      <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+        <Link color="inherit" href="/" onClick={handleClick}>
+          Shopping
+        </Link>
+        <Link color="inherit" href="/getting-started/installation/" onClick={handleClick}>
+          Products
+        </Link>
+        <Typography color="textPrimary">Breadcrumb</Typography>
+      </Breadcrumbs>
+    </div>
     <Container className={classes.root} maxWidth="xl">
       <Grid container xs={12}>
         {products.map((product)=>(
@@ -120,6 +136,7 @@ function Products() {
         ))}
       </Grid>
     </Container>
+    </div>
   )
 }
 

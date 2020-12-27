@@ -1,0 +1,13 @@
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 0;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  &__technologies {
+    margin-bottom: 1rem;
+  }
+}

@@ -4,7 +4,8 @@ import image_2 from '../../assets/banner_2.jpeg';
 import image_3 from '../../assets/banner_4.jpeg';
 import { makeStyles } from '@material-ui/core/styles';
 import OwlCarousel from 'react-owl-carousel';
-import { Button, Link } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
+import Link from '@material-ui/core/Link';
 
 const useStyle = makeStyles(()=>({
   main: {
@@ -31,9 +32,9 @@ const useStyle = makeStyles(()=>({
     top: 'calc(100%/2)',
     left: 'calc(100%/2)',
     zIndex: 999999,
-    borderRadius: '2px solid red',
     listStyleType: 'none',
-    textDecoration: 'none !impotant',
+    borderRadius: '3px',
+    underline: 'none',
   }
 }))
 export default () => {
@@ -62,10 +63,14 @@ export default () => {
           <img src={image_3} className={classes.img} alt="banner_1"/>
         </div>
       </OwlCarousel>
-
-      <Link href="/"  color="default" className={classes.linkClick} variant="raised">
-        LEARN MORE
-      </Link>
+      <div>
+        {/* <Link href="/"  color="default" className={classes.linkClick} variant="raised">
+          LEARN MORE
+        </Link> */}
+        {/* <Typography variant="h4" align="center" color="secondary" href="/" className={classes.linkClick}>
+          LEARN MORE
+        </Typography> */}
+      </div>
     </div>
   )
 }

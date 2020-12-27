@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -16,9 +16,15 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingBasketSharpIcon from '@material-ui/icons/ShoppingBasketSharp';
 import Fade from '@material-ui/core/Fade';
 import Divider from '@material-ui/core/Divider';
-import { Drawer, Link, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import { Avatar, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import StorefrontIcon from '@material-ui/icons/Storefront';
+import HomeIcon from '@material-ui/icons/Home';
+import FaceIcon from '@material-ui/icons/Face';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/authContext.jsx';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -99,7 +105,12 @@ const useStyles = makeStyles((theme) => ({
     width: '250px',
     height: '100%',
     textAlign: "center",
+    paddingTop: '30px',
   },
+  linkDrawer: {
+    textDecoration: 'none',
+    color: theme.palette.text.primary,
+  }
 }));
 
 export default function PrimarySearchAppBar() {
@@ -108,25 +119,16 @@ export default function PrimarySearchAppBar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [open, setOpen] = useState(false);
 
-  const isMenuOpen = Boolean(anchorEl);
+  const [state, ] = useContext(AuthContext);
+  const {user} = state;
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handelDrawer = () => {
     setOpen(true)
-    console.log('true')
   }
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -175,11 +177,11 @@ export default function PrimarySearchAppBar() {
             >
               <MenuIcon  onClick={handelDrawer} />
             </IconButton>
-            <Typography className={classes.title} variant="h6" noWrap >
-              <Link className={classes.linkhome} color="primary">
-                REACTJS SHOP
+              <Link to="/" className={classes.linkhome} color="primary">
+                <Typography className={classes.title} variant="h6" noWrap >
+                    REACTJS SHOP
+                </Typography>
               </Link>
-            </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
@@ -205,14 +207,19 @@ export default function PrimarySearchAppBar() {
                   <ShoppingBasketSharpIcon />
                 </Badge>
               </IconButton>
-              <IconButton
-                edge="end"
-                aria-label="account of current user"
-                aria-haspopup="true"
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
+              {
+                user && user.avatar ? <Avatar alt="nguyentranduc" src={user.avatar} /> :
+                  <IconButton
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-haspopup="true"
+                  color="inherit"
+                  href="/register"
+                  >
+                    <AccountCircle />
+                  </IconButton>
+              }
+    
             </div>
             <div className={classes.sectionMobile}>
               <IconButton
@@ -234,14 +241,48 @@ export default function PrimarySearchAppBar() {
         >
           <div className={classes.Drawer}>
             <h4>Alexander Nguyen</h4>
-            <List>
-            {['Product', 'About', 'Services', 'My CV'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
+              <List>
+                <Link to="/" className={classes.linkDrawer}>
+                  <ListItem button onClick={()=> setOpen(false)}>
+                    <ListItemIcon>
+                      <HomeIcon />
+                    </ListItemIcon>
+                    <ListItemText>Home</ListItemText>
+                  </ListItem>
+                </Link>
+                <Link to="/products" className={classes.linkDrawer}>
+                  <ListItem button onClick={()=> setOpen(false)}>
+                    <ListItemIcon>
+                      <StorefrontIcon />
+                    </ListItemIcon>
+                    <ListItemText>Product</ListItemText>
+                  </ListItem>
+                </Link>
+                <Link to="/products" className={classes.linkDrawer}>
+                  <ListItem button onClick={()=> setOpen(false)}>
+                    <ListItemIcon>
+                      <FaceIcon />
+                    </ListItemIcon>
+                    <ListItemText>About</ListItemText>
+                  </ListItem>
+                </Link>
+                <Link to="/login" className={classes.linkDrawer}>
+                  <ListItem button onClick={()=> setOpen(false)}>
+                    <ListItemIcon>
+                      <LockOpenIcon />
+                    </ListItemIcon>
+                    <ListItemText>Login</ListItemText>
+                  </ListItem>
+                </Link>
+                <Link to="/register" className={classes.linkDrawer}>
+                  <ListItem button onClick={()=> setOpen(false)}>
+                    <ListItemIcon>
+                      <VpnKeyIcon />
+                    </ListItemIcon>
+                    <ListItemText>Register</ListItemText>
+                  </ListItem>
+                </Link>
+              </List>
           <Divider />
           </div>
         </Drawer>
