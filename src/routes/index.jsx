@@ -8,21 +8,21 @@ import { AuthContext } from '../contexts/authContext';
 
 
 export default () => {
-  const [state, userDispatch ] = useContext(AuthContext);
+  // const [state, userDispatch ] = useContext(AuthContext);
 
 
-  const getUser = async ()  => {
-    const user = await localStorage.getItem('user');
-    userDispatch({type: 'LOG_IN_SUCESS', payload: JSON.parse(user)});
-    console.log('user', user)
-    return user;
-  }
-  const checkAuthentication = false;
+  // const getUser = async ()  => {
+  //   const user = await localStorage.getItem('user');
+  //   userDispatch({type: 'LOG_IN_SUCESS', payload: JSON.parse(user)});
+  //   console.log('user', user)
+  //   return user;
+  // }
+  // const checkAuthentication = false;
 
   
-  useEffect(() => {
-    getUser();
-  }, [])
+  // useEffect(() => {
+  //   getUser();
+  // }, [])
 
 
   return (
